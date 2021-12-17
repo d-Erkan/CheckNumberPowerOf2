@@ -1,0 +1,30 @@
+import java.util.Scanner;
+public class CheckPowerOf2Recursion
+{
+	public static void main(String[] args)
+	{
+		System.out.println("enter a natural number a to check if it is a power of 2");
+		Scanner keyboard=new Scanner(System.in);
+		int n=keyboard.nextInt();
+
+		if (powerOf2(n) == true)
+			System.out.print("True" + "\n");
+		else 
+			System.out.print("False" + "\n");
+	}
+
+	static boolean powerOf2(int n)
+	{
+	// '1' is the only odd number
+		if (n == 1)
+			return true;
+		else if (n % 2 != 0 ||n ==0)
+			return false;
+
+	// recursive function call
+	return powerOf2(n / 2);
+	}
+
+//powerOf2 is a boolean method, taking int n as parameter from the keyboard.
+}
+
